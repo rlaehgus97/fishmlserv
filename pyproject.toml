@@ -1,6 +1,6 @@
 [project]
 name = "fishmlserv"
-version = "0.1.0"
+version = "0.4.0"
 description = "Createing a Machine learning model - using sklearn(KNeighborsClassifier) using FastAPI, fly.io"
 authors = [
     {name = "rlaehgus97", email = "starkim625@gmail.com"},
@@ -8,7 +8,6 @@ authors = [
 dependencies = [
     "fastapi[standard]>=0.112.2",
     "uvicorn[standard]>=0.30.6",
-    "fishmlserv @ file:///${PROJECT_ROOT}/",
 ]
 requires-python = "==3.8.*"
 readme = "README.md"
