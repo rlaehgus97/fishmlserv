@@ -1,7 +1,7 @@
 [project]
 name = "fishmlserv"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "Createing a Machine learning model - using sklearn(KNeighborsClassifier) using FastAPI, fly.io"
 authors = [
     {name = "rlaehgus97", email = "starkim625@gmail.com"},
 ]
@@ -9,7 +9,7 @@ dependencies = [
     "fastapi>=0.112.2",
     "uvicorn[standard]>=0.30.6",
 ]
-requires-python = "==3.8.*"
+requires-python = "==3.11.*"
 readme = "README.md"
 license = {text = "MIT"}
 
