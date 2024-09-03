@@ -32,13 +32,13 @@ def fish(length: float, weight:float):
 
     prediction = fish_model.predict([[length, weight]])
 
-    if prediction[0] == 1:
-        fish_class = "도미"
-    else:
-        fish_class = "빙어"
+    CLASSES={
+                0:"빙어",
+                1:"도미"
+            }
 
     return {
-            "prediction": fish_class, 
+            "prediction":CLASSES[prediction],
             "length": length, 
             "weight": weight
             }

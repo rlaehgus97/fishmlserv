@@ -1,19 +1,26 @@
-from sklearn.neighbors import KNeighborsClassifier
-from fishmlserv.model.manager import get_model_path
-import pickle
-import fire
+import typer
 
-def knn_model(l:float, w:float):
-    model_path = get_model_path()
-    with open(model_path, 'rb') as f:
-        fish_model = pickle.load(f)
+app = typer.Typer()
 
-    prediction = fish_model.predict([[l, w]])
-    if prediction == 0:
-        fish_name = "Bream"
-    else:
-        fish_name = "Smelt"
-    print(f'물고기 예측 결과는 {fish_name}입니다.')
-    return fish_name
-if __name__ == '__main__':
-  fire.Fire(knn_model)
+
+def prediction(l:float=typer.Option(...,"-l"), w:float=typer.Option(...,"-w")):
+
+    from fishmlserv.model.manager import get_model_path
+    from sklearn.neighbors import KNeighborsClassifier
+    import pickle
+
+    with open(get_model_path(),"rb") as f:
+        model=pickle.load(f)
+
+    pred=model.predict([[l,w]])
+    
+    CLASSES={
+        0:"빙어",
+        1:"도미"
+    }
+
+    print(CLASSES[pred[0]])
+
+
+def run():
+    typer.run(prediction)

@@ -1,6 +1,6 @@
 [project]
 name = "fishmlserv"
-version = "0.8.1"
+version = "0.8.0"
 description = "Createing a Machine learning model - using sklearn(KNeighborsClassifier) using FastAPI, fly.io"
 authors = [
     {name = "rlaehgus97", email = "starkim625@gmail.com"},
@@ -8,17 +8,18 @@ authors = [
 dependencies = [
     #docker image에 포함되어 없어도 프로그램 작동
     "fire>=0.6.0",
+    "typer>=0.12.5",
 ]
 requires-python = ">=3.8"
 readme = "README.md"
 license = {text = "MIT"}
 
-#[project.scripts]
-#get-model-path = "src.fishmlserv.model.manager:get_model_path"
-#prediction = "src.fishmlserv.main:fish"
+[project.scripts]
+get-model-path = "fishmlserv.model.manager:get_model_path"
+prediction = "fishmlserv.pred:run"
  
 [tool.pdm]
-distribution = true
+distribution = false
 
 [tool.pdm.dev-dependencies]
 note = [
