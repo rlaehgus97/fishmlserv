@@ -8,7 +8,7 @@ authors = [
 dependencies = [
 #docker image에 포함되어 없어도 프로그램 작동
 ]
-requires-python = "==3.8.*"
+requires-python = ">=3.8"
 readme = "README.md"
 license = {text = "MIT"}
 
